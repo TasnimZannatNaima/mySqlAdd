@@ -10,6 +10,8 @@ module org.example.mysqladd {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
+    requires java.desktop;
 
     opens org.example.mysqladd to javafx.fxml;
     exports org.example.mysqladd;
