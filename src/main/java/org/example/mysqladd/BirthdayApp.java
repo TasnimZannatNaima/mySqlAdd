@@ -18,7 +18,7 @@ public class BirthdayApp extends Application {
     private TextField nameField = new TextField();
     private DatePicker birthdatePicker = new DatePicker();
     private TextField searchField = new TextField();
-    private List<Birthday> currentList;
+    private List<Birthday> currentList;//naima
 
     @Override
     public void start(Stage stage) {
@@ -29,7 +29,7 @@ public class BirthdayApp extends Application {
         Label nameLabel = new Label("নাম:");
         Label dateLabel = new Label("জন্মতারিখ:");
 
-        idField.setEditable(false); // আইডি পরিবর্তনযোগ্য নয়
+        idField.setEditable(false); // it22001আইডি পরিবর্তনযোগ্য নয়
 
         Button addBtn = new Button("যোগ করুন");
         Button updateBtn = new Button("আপডেট করুন");
