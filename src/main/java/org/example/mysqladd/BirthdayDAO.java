@@ -18,7 +18,7 @@ public class BirthdayDAO {
     public void updateBirthday(Birthday b) throws SQLException {
         String sql = "UPDATE new_table SET name=?, birthday=? WHERE id=?";
         try (Connection conn = Database.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, b.getName());
+            stmt.setString(1, b.getName());//naimait22001
             stmt.setDate(2, java.sql.Date.valueOf(b.getBirthdate()));
             stmt.setInt(3, b.getId());
             stmt.executeUpdate();
@@ -41,7 +41,7 @@ public class BirthdayDAO {
             while (rs.next()) {
                 Birthday b = new Birthday();
                 b.setId(rs.getInt("id"));
-                b.setName(rs.getString("name"));
+                b.setName(rs.getString("name"));//naima
                 b.setBirthdate(rs.getDate("birthday").toLocalDate());
                 list.add(b);
             }
@@ -58,7 +58,7 @@ public class BirthdayDAO {
             try {
                 month = Integer.parseInt(keyword);
             } catch (NumberFormatException ignored) {}
-            stmt.setInt(2, month);
+            stmt.setInt(2, month);//naima
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Birthday b = new Birthday();
@@ -73,7 +73,7 @@ public class BirthdayDAO {
 
     public List<Birthday> getTodaysBirthdays() throws SQLException {
         String sql = "SELECT * FROM new_table WHERE MONTH(birthday) = ? AND DAY(birthday) = ?";
-        List<Birthday> list = new ArrayList<>();
+        List<Birthday> list = new ArrayList<>();//naima
         LocalDate today = LocalDate.now();
         try (Connection conn = Database.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, today.getMonthValue());
@@ -81,7 +81,7 @@ public class BirthdayDAO {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Birthday b = new Birthday();
-                b.setId(rs.getInt("id"));
+                b.setId(rs.getInt("id"));//it22001
                 b.setName(rs.getString("name"));
                 b.setBirthdate(rs.getDate("birthday").toLocalDate());
                 list.add(b);
