@@ -8,11 +8,11 @@ public class Birthday {
     private LocalDate birthdate;
 
     public int getId() {
-        return id;
+        return id;//it22001
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id = id;//it22001
     }
 
     public String getName() {
@@ -20,7 +20,7 @@ public class Birthday {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name;//naima
     }
 
     public LocalDate getBirthdate() {
